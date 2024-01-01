@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        height: 400px;
+        width: 400px;
+        object-fit: cover;
+      }
+      .slider {
+        display: flex;
+        width: 400px;
+        /* overflow: hidden; */
+      }
+      .section {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <button class="prevBtn">prev</button>
+      <div class="slider">
+        <article>
+          <img
+            src="https://images.pexels.com/photos/5069432/pexels-photo-5069432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </article>
+        <article>
+          <img
+            src="https://images.pexels.com/photos/5069612/pexels-photo-5069612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </article>
+        <article>
+          <img
+            src="https://images.pexels.com/photos/6969738/pexels-photo-6969738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+        </article>
+      </div>
+      <button class="nextBtn">next</button>
+    </section>
+    <script>
+      const images = document.querySelectorAll('article')
+      const prevBtn = document.querySelector('.prevBtn')
+      const nextBtn = document.querySelector('.nextBtn')
+      let slideIndex = 1
+      showSlide(slideIndex)
+
+      nextBtn.addEventListener('click', () => {
+        showSlide(slideIndex + 1)
+      })
+
+      prevBtn.addEventListener('click', () => {
+        showSlide(slideIndex - 1)
+      })
+
+      function showSlide(n) {
+        let i
+
+        images[slideIndex].style.display = 'block'
+        if (n > images.length) {
+          slideIndex = 1
+        }
+        if (n < 1) {
+          slideIndex = images.length
+        }
+        for (i = 0; i < images.length; i++) {
+          console.log(i)
+          images[i].style.display = 'none'
+        }
+        images[slideIndex - 1].style.display = 'block'
+      }
+      console.log(prevBtn, nextBtn, images[0])
+    </script>
+  </body>
+</html>
