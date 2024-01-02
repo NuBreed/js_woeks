@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 100vw;
+
+  display: flex;
+}
+.sidebar {
+  background-color: #007155;
+  min-height: 100vh;
+  flex-basis: 20%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-header {
+  margin: 40px auto;
+  height: 146px;
+  width: 146px;
+  border-radius: 50%;
+}
+
+.nav-links li {
+  padding: 12px;
+  display: flex;
+  gap: 20px;
+  color: white;
+  margin: 0 auto;
+  font-size: 24px;
+}
+span {
+  transition: color 1s ease-in-out;
+  color: #414b5a;
+}
+.nav-links li:hover span {
+  color: #8dbbff;
+}
+.nav-links li:active span {
+  color: #8dbbff;
+}
+.nav-links li:focus span {
+  color: #8dbbff;
+}
+.main-content {
+  flex-basis: 80%;
+  padding: 16px;
+}
+.main-content-header {
+  margin: 47px 0;
+  h4 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+.Trending {
+  color: #8dbbff;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.main-content-body {
+  display: flex;
+  gap: 40px;
+}
+
+.main-content-body-left {
+  width: auto;
+  border-radius: 10px;
+}
+.news-card {
+  display: flex;
+  padding: 12px;
+  margin-bottom: 12px;
+  gap: 20px;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+  width: 40%;
+  border-radius: 10px;
+  transition: background-color 2s ease-out;
+  width: 100%;
+}
+.news-card:hover {
+  background-color: #c0d6f6;
+}
+
+.news-card-img {
+  height: 166px;
+  width: 156px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.news-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+.news-card-headertext {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+.news-card-info {
+  padding-right: 12px;
+}
+.news-card-published {
+  text-align: end;
+}
+.main-content-body-right {
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+  width: 500px;
+  border-radius: 10px;
+  transition: background-color 2s ease-out;
+
+  p {
+    padding: 0 32px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.25);
+  }
+}
+.main-content-body-right:hover {
+  background-color: #c0d6f6;
+}
+.card-details-img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+.card-details-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+/* weather page */
+.weather-page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #007155;
+}
+.wp-wrapper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border: 4px solid red;
+}
