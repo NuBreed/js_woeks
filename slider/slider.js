@@ -1,31 +1,33 @@
 const images = document.querySelectorAll('article')
 const prevBtn = document.querySelector('.prevBtn')
 const nextBtn = document.querySelector('.nextBtn')
-let slideIndex = 1
-showSlide(slideIndex)
-
-nextBtn.addEventListener('click', () => {
-  showSlide(slideIndex + 1)
-})
-
-prevBtn.addEventListener('click', () => {
-  showSlide(slideIndex - 1)
-})
-
-function showSlide(n) {
-  let i
-
+let slideIndex = 0
+let index = null
+function showSlide(index) {
+  if (index >= images.length) {
+    slideIndex = 0
+  } else if (index < 0) {
+    slideIndex = images.length - 1
+  }
+  images.forEach((img) => (img.style.display = 'none'))
   images[slideIndex].style.display = 'block'
-  if (n > images.length) {
-    slideIndex = 1
-  }
-  if (n < 1) {
-    slideIndex = images.length
-  }
-  for (i = 0; i < images.length; i++) {
-    console.log(i)
-    images[i].style.display = 'none'
-  }
-  images[slideIndex - 1].style.display = 'block'
+}
+displaySliders()
+showSlide()
+prevBtn.addEventListener('click', prevSlide)
+nextBtn.addEventListener('click', nextSlide)
+function prevSlide() {
+  slideIndex--
+  showSlide(slideIndex)
+}
+function nextSlide() {
+  slideIndex++
+  showSlide(slideIndex)
+}
+
+function displaySliders() {
+  images.forEach((img) => (img.style.display = 'none'))
+  images[slideIndex].style.display = 'block'
+  index = setInterval(nextSlide, 5000)
 }
 console.log(prevBtn, nextBtn, images[0])
