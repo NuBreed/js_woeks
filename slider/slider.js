@@ -9,7 +9,9 @@ function showSlide(index) {
   } else if (index < 0) {
     slideIndex = images.length - 1
   }
-  images.forEach((img) => (img.style.display = 'none'))
+  images.forEach((img, index) => {
+    img.style.display = 'none'
+  })
   images[slideIndex].style.display = 'block'
 }
 displaySliders()
