@@ -21,23 +21,35 @@
     <main class="weather-page">
       <div class="wp-wrapper">
         <div class="wp-left">
-          <div class="wp-header">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-            </span>
-            <p>Accra, Ghana</p>
-            <span> Thur-Oct-12 </span>
+          <img src="./assets/farmer.png" alt="" class="wp-farmer-img" />
+        </div>
+
+        <div class="wp-right">
+          <div class="wp-header-wrapper">
+            <div class="wp-header">
+              <span class="wp-header-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <p class="wp-header-city">Accra, Ghana</p>
+            </div>
+            <p class="wp-header-date">Thur-Oct-12</p>
           </div>
           <div class="wp-card">
-            <div>
-              <h4>20*</h4>
-              <i class="fa-solid fa-location-dot"></i>
+            <div class="wp-card-main">
+              <div class="wp-card-data">
+                <div class="">
+                  <span>20</span>
+                  <span>&#176;</span>
+                </div>
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <div class="wp-card-data wp-feels">
+                <p>Reel feel: <span>20</span></p>
+                <p>Cloudy</p>
+              </div>
             </div>
-            <div>
-              <p>reel feel: 20</p>
-              <p>Cloudy</p>
-            </div>
-            <div>
+
+            <div class="wp-details">
               <ul>
                 <li>
                   <span>UV Index</span>
@@ -61,10 +73,31 @@
                 </li>
               </ul>
             </div>
-            <div></div>
+
+            <ul class="wp-nav">
+              <li>
+                <a href="./weather.html">
+                  <i class="fa-solid fa-cloud"></i>
+                </a>
+              </li>
+              <li>
+                <a href="./insights.html"
+                  ><i class="fa-solid fa-chart-line"></i
+                ></a>
+              </li>
+              <li>
+                <a href="./index.html">
+                  <i class="fa-solid fa-newspaper"></i>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fa-solid fa-location-dot"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div></div>
       </div>
     </main>
   </body>
