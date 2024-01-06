@@ -25,7 +25,7 @@ let articles = newsArray.map(function (article) {
                 </div>
                 <div class="news-card-content">
                   <div class="news-card-headertext">
-                    <h4>${article.title}}</h4>
+                    <h4>${article.title}</h4>
                     <span>
                       <i class="fa-regular fa-bookmark"></i>
                     </span>
