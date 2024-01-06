@@ -90,7 +90,7 @@ span {
   margin-bottom: 12px;
 }
 .main-content-body {
-  display: flex;
+  /* display: flex; */
   gap: 40px;
 }
 
@@ -149,6 +149,9 @@ span {
     font-weight: bold;
     color: rgba(0, 0, 0, 0.25);
   }
+}
+.display {
+  display: none;
 }
 .main-content-body-right:hover {
   background-color: #c0d6f6;

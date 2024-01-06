@@ -11,20 +11,21 @@ setInterval(() => {
   }
 }, 40)
 
-let articles = newsArray.map(function (element) {
+let articles = newsArray.map(function (article) {
   return `
-<article class="news-card">
+  <div class="main-content-body-left">
+            <div class="card-wrapper">
+              <article class="news-card">
                 <div class="news-card-header">
                   <img
-                    src="${element.image}"
+                    src="${article.image}"
                     alt=""
                     class="news-card-img"
                   />
                 </div>
-
                 <div class="news-card-content">
                   <div class="news-card-headertext">
-                    <h4>${element.title}</h4>
+                    <h4>${article.title}}</h4>
                     <span>
                       <i class="fa-regular fa-bookmark"></i>
                     </span>
@@ -33,73 +34,37 @@ let articles = newsArray.map(function (element) {
                     "Agriculture is the most healthful, most useful and most
                     noble employment of man.
                   </p>
-                  <h5 class="news-card-author">${element.author}</h5>
-                  <h5 class="news-card-published">${element.date_published}</h5>
+                  <h5 class="news-card-author">${article.author}</h5>
+                  <h5 class="news-card-published">${article.date_published}</h5>
                 </div>
               </article>
-`
-})
-const fullDetails = newsArray.map((article, index) => {
-  return `
-<div>
-             <img
-                src="https://images.pexels.com/photos/59999/raspberries-fruits-fruit-berries-59999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              </div>
+          </div>
+          <div class="main-content-body-right display">
+            <div>
+              <img
+                src="${article.details.details_image}"
                 alt=""
                 class="card-details-img"
               />
               <h2 class="card-details-title">${article.details.details_title}</h2>
               <p>
-               ${article.details.details_text}
+                ${article.details.details_text}
               </p>
-              <p>
-               ${article.details.details_text}
-                
-              </p>
+             
             </div>
           </div>
        
 `
 })
-console.log(fullDetails)
-const wrapper = document.querySelector('.card-wrapper')
+
+const wrapper = document.querySelector('.main-content-body')
 wrapper.innerHTML = articles
-const detailsWrapper = document.querySelector('.main-content-body-right')
 
-const bookmarks = document.querySelectorAll('.fa-bookmark')
-
-const artWrappers = document.querySelectorAll('.news-card')
-artWrappers.forEach((artWrapper, index) => {
-  artWrapper.addEventListener('click', function () {
-    const fullDetails = newsArray.map((article, index) => {})
+const wrapperCard = document.querySelectorAll('.news-card')
+console.log(wrapperCard)
+wrapperCard.forEach((card) => {
+  card.addEventListener('click', function () {
+    document.querySelector('.main-content-body-right').style.display = 'block'
   })
 })
-
-// bookmarks.forEach((bookmark, index) => {
-//   bookmark.addEventListener('click', function () {
-//     console.log('food', index + 1)
-//     const details = newsArray.map((article, index_1) => {
-//       console.log(index === index_1)
-//       console.log(article)
-//       const detialsWrapper = document.querySelectorAll(
-//         '.main-content-body-right'
-//       )
-//       if (index === index_1) {
-//         bookmark.style.color = 'red'
-//         detialsWrapper.innerHTML = `<div>
-//               <img
-//                 src="${article.details.details_image}"
-//                 alt=""
-//                 class="card-details-img"
-//               />
-//               <h2 class="card-details-title">${article.details.details_title}</h2>
-//               <p>
-//                 ${article.details.details_title}
-//               </p>
-
-//             </div>
-
-//         `
-//       }
-//     })
-//   })
-// })
