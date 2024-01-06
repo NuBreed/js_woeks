@@ -39,6 +39,18 @@ li {
   margin: 0 auto;
   font-size: 24px;
 }
+@media (max-width: 500px) {
+  .nav-links li a {
+    display: none;
+  }
+  .sidebar {
+    background-color: #007155;
+    min-height: 100vh;
+    flex-basis: 5%;
+    padding: 16px;
+  }
+}
+
 span {
   transition: color 1s ease-in-out;
   color: #414b5a;
