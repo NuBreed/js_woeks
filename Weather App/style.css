@@ -46,8 +46,16 @@ li {
   .sidebar {
     background-color: #007155;
     min-height: 100vh;
-    flex-basis: 5%;
+    flex-basis: auto;
     padding: 16px;
+  }
+  .sidebar-header {
+    height: 12px;
+    width: 12px;
+  }
+  .sidebar-header img {
+    height: 30px;
+    width: 30px;
   }
 }
 
