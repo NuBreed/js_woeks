@@ -39,21 +39,10 @@ let articles = newsArray.map(function (element) {
               </article>
 `
 })
-
-const wrapper = document.querySelector('.card-wrapper')
-wrapper.innerHTML = articles
-const detailsWrapper = document.querySelector('.main-content-body-right')
-
-const bookmarks = document.querySelectorAll('.fa-bookmark')
-
-const artWrappers = document.querySelectorAll('.news-card')
-artWrappers.forEach((artWrapper, index) => {
-  artWrapper.addEventListener('click', function () {
-    const fullDetails = newsArray.map((article, index) => {
-      if (index === article.id) {
-        return `
+const fullDetails = newsArray.map((article, index) => {
+  return `
 <div>
-              <img
+             <img
                 src="https://images.pexels.com/photos/59999/raspberries-fruits-fruit-berries-59999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
                 class="card-details-img"
@@ -70,10 +59,18 @@ artWrappers.forEach((artWrapper, index) => {
           </div>
        
 `
-      }
-    })
+})
+console.log(fullDetails)
+const wrapper = document.querySelector('.card-wrapper')
+wrapper.innerHTML = articles
+const detailsWrapper = document.querySelector('.main-content-body-right')
 
-    detailsWrapper.innerHTML = fullDetails
+const bookmarks = document.querySelectorAll('.fa-bookmark')
+
+const artWrappers = document.querySelectorAll('.news-card')
+artWrappers.forEach((artWrapper, index) => {
+  artWrapper.addEventListener('click', function () {
+    const fullDetails = newsArray.map((article, index) => {})
   })
 })
 
