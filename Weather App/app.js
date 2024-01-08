@@ -76,42 +76,74 @@ let articles = newsArray.map(function (article) {
 const inputText = document.querySelector('.search-input')
 const searchBtn = document.querySelector('.search-btn')
 const city = document.querySelector('.wp-header-city')
-console.log(city)
+const temperature = document.querySelector('.wp-card-temp')
+const weatherDesc = document.querySelector('.wp-header-details')
+const current_weather = document.querySelector('.current_weather')
+const UV_index = document.querySelector('.UV-index')
+const humidity = document.querySelector('.humidity')
+const wind_speed = document.querySelector('.wind-speed')
+const visibility = document.querySelector('.visibility')
 
-searchBtn.addEventListener('click', async function () {
-  const searchDetail = inputText.value.trim()
-  if (searchDetail === '') {
-    alert('eneter a city name')
-    return
-  } else {
-  }
-  console.log(searchDetail)
-  fetching()
-  const weatherDetails = await fetching(searchDetail)
-  const { data } = weatherDetails
-  console.log(weatherDetails.data)
+// searchBtn.addEventListener('click', async function () {
+//   const searchDetail = inputText.value.trim()
 
-  city.textContent = data.city
-})
+//   if (searchDetail === '') {
+//     alert('kindly enter a city name')
+//     return
+//   }
 
-const fetching = async (searchDetail = 'london') => {
-  const url = `
-  https://the-weather-api.p.rapidapi.com/api/weather/${searchDetail}
-  
-  `
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '34b2626b9emshae01e8559ddf12bp1602e1jsn7c8044507e51',
-      'X-RapidAPI-Host': 'the-weather-api.p.rapidapi.com',
-    },
-  }
+//   const weatherDetails = await fetching()
 
-  try {
-    const response = await fetch(url, options)
+//   console.log(weatherDetails.data)
+
+//   city.textContent = weatherDetails.data.city
+//   temperature.textContent = weatherDetails.data.temp
+//   weatherDesc.textContent = weatherDetails.data.aqi_description
+//   current_weather.textContent = weatherDetails.data.current_weather
+//   UV_index.textContent = weatherDetails.data.uv_index
+//   visibility.textContent = weatherDetails.data.visibility
+//   humidity.textContent = weatherDetails.data.humidity
+//   wind_speed.textContent = weatherDetails.data.wind
+//   weatherWrapper.computedStyleMap.backgroundImage = url(weatherDetails.bg_image)
+// })
+
+const fetching = async () => {
+  navigator.geolocation.getCurrentPosition(async function (position) {
+    const latitude = position.coords.latitude.toFixed(2)
+    const longitude = position.coords.longitude.toFixed(2)
+    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`)
+
+    const now = new Date()
+    const year = now.getFullYear()
+    const month = now.getMonth() + 1
+    const day = now.getDate()
+    // const url = `
+    //             https://api.brightsky.dev/
+    //             weather?lat=${latitude}&lon=${longitude}&date=${year}-0${month}-0${day}`
+    const url = `https://api.brightsky.dev/weather?lat=${latitude}&lon=${longitude}&date=${year}-0${month}-0${day}`
+
+    const response = await fetch(url)
     const result = await response.json()
-    return result
-  } catch (error) {
-    console.error(error)
-  }
+    const { weather } = result
+    const weatherData = weather[0]
+    console.log(weatherData, weather)
+    // city.textContent = weatherDetails.data.city
+    temperature.textContent = weatherData.temperature
+    current_weather.textContent = weatherData.icon.toUpperCase()
+    UV_index.textContent = weatherData.precipitation
+    visibility.textContent = weatherData.visibility
+    humidity.textContent = weatherData.relative_humidity
+    wind_speed.textContent = weatherData.wind_speed
+  })
 }
+fetching()
+
+// city.textContent = weatherDetails.data.city
+// temperature.textContent = weatherDetails.data.temp
+// weatherDesc.textContent = weatherDetails.data.aqi_description
+// current_weather.textContent = weatherDetails.data.current_weather
+// UV_index.textContent = weatherDetails.data.uv_index
+// visibility.textContent = weatherDetails.data.visibility
+// humidity.textContent = weatherDetails.data.humidity
+// wind_speed.textContent = weatherDetails.data.wind
+// weatherWrapper.computedStyleMap.backgroundImage = url(weatherDetails.bg_image)
