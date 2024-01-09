@@ -226,11 +226,12 @@ span {
 }
 .wp-nav {
   background-color: #ffffff;
-  font-size: 20px;
+  font-size: 24px;
   display: flex;
   padding: 12px;
   border-radius: 24px;
   justify-content: space-evenly;
+  margin-bottom: 24px;
 }
 .wp-nav li > a {
   color: #414b5a;
