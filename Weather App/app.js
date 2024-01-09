@@ -83,29 +83,13 @@ const UV_index = document.querySelector('.UV-index')
 const humidity = document.querySelector('.humidity')
 const wind_speed = document.querySelector('.wind-speed')
 const visibility = document.querySelector('.visibility')
+const date_searched = document.querySelector('.wp-header-date')
+const now = new Date()
+const year = now.getFullYear()
+const month = now.getMonth() + 1
+const day = now.getDate()
 
-// searchBtn.addEventListener('click', async function () {
-//   const searchDetail = inputText.value.trim()
-
-//   if (searchDetail === '') {
-//     alert('kindly enter a city name')
-//     return
-//   }
-
-//   const weatherDetails = await fetching()
-
-//   console.log(weatherDetails.data)
-
-//   city.textContent = weatherDetails.data.city
-//   temperature.textContent = weatherDetails.data.temp
-//   weatherDesc.textContent = weatherDetails.data.aqi_description
-//   current_weather.textContent = weatherDetails.data.current_weather
-//   UV_index.textContent = weatherDetails.data.uv_index
-//   visibility.textContent = weatherDetails.data.visibility
-//   humidity.textContent = weatherDetails.data.humidity
-//   wind_speed.textContent = weatherDetails.data.wind
-//   weatherWrapper.computedStyleMap.backgroundImage = url(weatherDetails.bg_image)
-// })
+date_searched.textContent = `${year}-0${month}-0${day}`
 
 const fetching = async () => {
   navigator.geolocation.getCurrentPosition(async function (position) {
@@ -113,23 +97,17 @@ const fetching = async () => {
     const longitude = position.coords.longitude.toFixed(2)
     console.log(`Latitude: ${latitude}, Longitude: ${longitude}`)
 
-    const now = new Date()
-    const year = now.getFullYear()
-    const month = now.getMonth() + 1
-    const day = now.getDate()
-    // const url = `
-    //             https://api.brightsky.dev/
-    //             weather?lat=${latitude}&lon=${longitude}&date=${year}-0${month}-0${day}`
     const url = `https://api.brightsky.dev/weather?lat=${latitude}&lon=${longitude}&date=${year}-0${month}-0${day}`
 
     const response = await fetch(url)
     const result = await response.json()
+    console.log(result.sources[0].station_name)
     const { weather } = result
     const weatherData = weather[0]
-    console.log(weatherData, weather)
-    // city.textContent = weatherDetails.data.city
+
+    city.textContent = result.sources[0].station_name
     temperature.textContent = weatherData.temperature
-    current_weather.textContent = weatherData.icon.toUpperCase()
+    current_weather.textContent = weatherData.icon
     UV_index.textContent = weatherData.precipitation
     visibility.textContent = weatherData.visibility
     humidity.textContent = weatherData.relative_humidity
@@ -137,13 +115,3 @@ const fetching = async () => {
   })
 }
 fetching()
-
-// city.textContent = weatherDetails.data.city
-// temperature.textContent = weatherDetails.data.temp
-// weatherDesc.textContent = weatherDetails.data.aqi_description
-// current_weather.textContent = weatherDetails.data.current_weather
-// UV_index.textContent = weatherDetails.data.uv_index
-// visibility.textContent = weatherDetails.data.visibility
-// humidity.textContent = weatherDetails.data.humidity
-// wind_speed.textContent = weatherDetails.data.wind
-// weatherWrapper.computedStyleMap.backgroundImage = url(weatherDetails.bg_image)

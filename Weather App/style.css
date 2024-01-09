@@ -170,62 +170,57 @@ span {
 }
 /* weather page */
 .weather-page {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: #007155;
   color: #ffffff;
 }
 .wp-wrapper {
-  width: 80%;
+  width: 90vw;
   height: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row-reverse;
+  text-align: center;
 }
-.wp-farmer-img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+.wp-left {
+  padding: 16px;
 }
 .wp-header-wrapper {
-  margin-bottom: 24px;
+  padding: 12px;
+  width: 100%;
 }
 .wp-header {
   display: flex;
+  justify-content: center;
   gap: 12px;
-  justify-content: end;
   align-items: center;
 }
 .wp-header-icon {
   color: #ffffff;
-  font-size: 24px;
-}
-.wp-header-city {
-  font-size: 20px;
+  font-size: 32px;
 }
 .wp-header-date {
-  display: block;
-  text-align: end;
-  font-weight: 300;
+  margin-right: -200px;
 }
 .wp-card-main {
   width: 250px;
+
   padding: 12px;
   background-color: #ffffff;
   border-radius: 10px;
-  margin-bottom: 24px;
+  margin: 24px auto;
+  color: black;
 }
 .wp-card-data {
-  padding: 16px;
-  font-size: 20px;
+  padding: 12px;
   display: flex;
-  color: #000000;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.wp-details {
-  font-size: 14px;
+.wp-details ul li {
+  display: flex;
+  justify-content: space-around;
+}
+.wp-details ul li span {
+  font-size: 20px;
   color: #ffffff;
   margin-bottom: 24px;
 }
@@ -247,6 +242,81 @@ span {
 .wp-nav li > a:active {
   color: #8dbbff;
 }
+@media (min-width: 768px) {
+  .wp-wrapper {
+    width: 80vw;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .wp-farmer-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+  .wp-header-wrapper {
+    margin-bottom: 24px;
+  }
+  .wp-header {
+    display: flex;
+    gap: 12px;
+    justify-content: end;
+    align-items: center;
+  }
+  .wp-header-icon {
+    color: #ffffff;
+    font-size: 24px;
+  }
+  .wp-header-city {
+    font-size: 20px;
+  }
+  .wp-header-date {
+    display: block;
+    text-align: end;
+    font-weight: 300;
+  }
+  .wp-card-main {
+    width: 250px;
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .wp-card-data {
+    padding: 16px;
+    font-size: 20px;
+    display: flex;
+    color: #000000;
+    justify-content: space-between;
+  }
+  .wp-details {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+  .wp-nav {
+    background-color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    padding: 12px;
+    border-radius: 24px;
+    justify-content: space-evenly;
+  }
+  .wp-nav li > a {
+    color: #414b5a;
+    transition: color 1s ease-out;
+  }
+  .wp-nav li > a:hover {
+    color: #8dbbff;
+  }
+  .wp-nav li > a:active {
+    color: #8dbbff;
+  }
+}
+
 /* insights */
 .svg {
   height: 160px;
