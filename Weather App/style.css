@@ -90,7 +90,7 @@ span {
   margin-bottom: 12px;
 }
 .main-content-body {
-  /* display: flex; */
+  display: flex;
   gap: 40px;
 }
 

@@ -15,9 +15,8 @@ if (document.path === 'insights.html') {
 
 let articles = newsArray.map(function (article) {
   return `
-  <div class="main-content-body-left">
-            <div class="card-wrapper">
-              <article class="news-card">
+  
+              <article class="news-card" data-id=${article.id}>
                 <div class="news-card-header">
                   <img
                     src="${article.image}"
@@ -40,36 +39,27 @@ let articles = newsArray.map(function (article) {
                   <h5 class="news-card-published">${article.date_published}</h5>
                 </div>
               </article>
-              </div>
-          </div>
-          <div class="main-content-body-right display">
-            <div>
-              <img
-                src="${article.details.details_image}"
-                alt=""
-                class="card-details-img"
-              />
-              <h2 class="card-details-title">${article.details.details_title}</h2>
-              <p>
-                ${article.details.details_text}
-              </p>
-             
-            </div>
-          </div>
+            
+          
        
 `
 })
 
-// const wrapper = document.querySelector('.main-content-body')
-// wrapper.innerHTML = articles
+const wrapper = document.querySelector('.card-wrapper')
+wrapper.innerHTML = articles
 
-// const wrapperCard = document.querySelectorAll('.news-card')
-// console.log(wrapperCard)
-// wrapperCard.forEach((card) => {
-//   card.addEventListener('click', function () {
-//     document.querySelector('.main-content-body-right').style.display = 'block'
-//   })
-// })
+const wrapperCard = document.querySelectorAll('[data-id]')
+
+wrapperCard.forEach((articleCard, index) => {
+  const id = articleCard.getAttribute('data-id')
+  const displayDetails = document.querySelector('[data-details]')
+  const ok = displayDetails.getAttribute('data-details')
+  articleCard.addEventListener('click', () => {
+    if (id === ok) {
+      console.log('true')
+    }
+  })
+})
 
 // weather
 
@@ -89,7 +79,7 @@ const year = now.getFullYear()
 const month = now.getMonth() + 1
 const day = now.getDate()
 
-date_searched.textContent = `${year}-0${month}-0${day}`
+// date_searched.textContent = `${year}-0${month}-0${day}`
 
 const fetching = async () => {
   navigator.geolocation.getCurrentPosition(async function (position) {

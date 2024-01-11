@@ -96,7 +96,7 @@ export const newsArray = [
     },
   },
   {
-    id: 6,
+    id: 7,
     image:
       'https://images.pexels.com/photos/2363347/pexels-photo-2363347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Hay When You Need It',
@@ -112,7 +112,7 @@ export const newsArray = [
     },
   },
   {
-    id: 6,
+    id: 8,
     image:
       'https://images.pexels.com/photos/2363347/pexels-photo-2363347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Hay When You Need It',
@@ -128,7 +128,7 @@ export const newsArray = [
     },
   },
   {
-    id: 6,
+    id: 9,
     image:
       'https://images.pexels.com/photos/2363347/pexels-photo-2363347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Hay When You Need It',
@@ -144,7 +144,7 @@ export const newsArray = [
     },
   },
   {
-    id: 6,
+    id: 10,
     image:
       'https://images.pexels.com/photos/2363347/pexels-photo-2363347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     title: 'Hay When You Need It',
