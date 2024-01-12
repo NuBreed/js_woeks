@@ -45,8 +45,28 @@ let articles = newsArray.map(function (article) {
 `
 })
 
+let articleDetails = newsArray.map(function (article) {
+  return `<div data-details=${article.id} class="card-details">
+              <img
+                src=${article.details.details_image}
+                alt=""
+                class="card-details-img"
+              />
+              <h2 class="card-details-title">${article.details.details_title}</h2>
+              <p>
+               ${article.details.details_text}
+              </p>
+              <p>
+             ${article.details.details_text}
+              </p>
+            </div>
+            `
+})
 const wrapper = document.querySelector('.card-wrapper')
 wrapper.innerHTML = articles
+// details
+const detailsWrapper = document.querySelector('.main-content-body-right')
+detailsWrapper.innerHTML = articleDetails
 
 const wrapperCard = document.querySelectorAll('[data-id]')
 
