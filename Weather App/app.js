@@ -61,7 +61,7 @@ wrapperCard.forEach((articleCard, index) => {
   // const ok = displayDetails.getAttribute('data-details')
   articleCard.addEventListener('click', () => {
     if (id === ok) {
-      console.log('true')
+      console.log(id, 'true')
     }
   })
 })
