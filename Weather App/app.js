@@ -70,19 +70,25 @@ detailsWrapper.innerHTML = articleDetails
 
 const wrapperCard = document.querySelectorAll('[data-id]')
 
-wrapperCard.forEach((articleCard, index) => {
-  const id = articleCard.getAttribute('data-id')
-  const displayDetails = document.querySelectorAll('[data-details]')
-  let ok
-  displayDetails.forEach((displayDetail) => {
-    ok = displayDetail.getAttribute('data-details')
-    console.log(ok)
-  })
-  // const ok = displayDetails.getAttribute('data-details')
-  articleCard.addEventListener('click', () => {
-    if (id === ok) {
-      console.log(id, 'true')
-    }
+const displayDetails = document.querySelectorAll('.card-details')
+
+let data_details
+let id
+
+displayDetails.forEach((displayDetail) => {
+  data_details = displayDetail.getAttribute('data-details')
+  console.log(data_details)
+  displayDetail.style.display = 'none'
+  wrapperCard.forEach((articleCard) => {
+    id = articleCard.getAttribute('data-id')
+
+    articleCard.addEventListener('click', () => {
+      displayDetail.style.display = 'none'
+
+      if (data_details === id) {
+        displayDetail.style.display = 'block'
+      }
+    })
   })
 })
 
