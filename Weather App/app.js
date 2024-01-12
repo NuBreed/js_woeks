@@ -16,7 +16,7 @@ if (document.path === 'insights.html') {
 let articles = newsArray.map(function (article) {
   return `
   
-              <article class="news-card" data-id=${article.id}>
+              <article class="news-card" data-id=${article.id} >
                 <div class="news-card-header">
                   <img
                     src="${article.image}"
@@ -63,34 +63,14 @@ let articleDetails = newsArray.map(function (article) {
             `
 })
 const wrapper = document.querySelector('.card-wrapper')
-wrapper.innerHTML = articles
+// wrapper.innerHTML = articles
 // details
 const detailsWrapper = document.querySelector('.main-content-body-right')
-detailsWrapper.innerHTML = articleDetails
+// detailsWrapper.innerHTML = articleDetails
 
 const wrapperCard = document.querySelectorAll('[data-id]')
 
 const displayDetails = document.querySelectorAll('.card-details')
-
-let data_details
-let id
-
-displayDetails.forEach((displayDetail) => {
-  data_details = displayDetail.getAttribute('data-details')
-  console.log(data_details)
-  displayDetail.style.display = 'none'
-  wrapperCard.forEach((articleCard) => {
-    id = articleCard.getAttribute('data-id')
-
-    articleCard.addEventListener('click', () => {
-      displayDetail.style.display = 'none'
-
-      if (data_details === id) {
-        displayDetail.style.display = 'block'
-      }
-    })
-  })
-})
 
 // weather
 
