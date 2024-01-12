@@ -52,8 +52,13 @@ const wrapperCard = document.querySelectorAll('[data-id]')
 
 wrapperCard.forEach((articleCard, index) => {
   const id = articleCard.getAttribute('data-id')
-  const displayDetails = document.querySelector('[data-details]')
-  const ok = displayDetails.getAttribute('data-details')
+  const displayDetails = document.querySelectorAll('[data-details]')
+  let ok
+  displayDetails.forEach((displayDetail) => {
+    ok = displayDetail.getAttribute('data-details')
+    console.log(ok)
+  })
+  // const ok = displayDetails.getAttribute('data-details')
   articleCard.addEventListener('click', () => {
     if (id === ok) {
       console.log('true')
