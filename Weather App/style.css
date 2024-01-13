@@ -160,6 +160,9 @@ span {
 .card-details:nth-child(1) {
   display: block;
 } */
+.showing {
+  display: none;
+}
 .main-content-body-right:hover {
   background-color: #c0d6f6;
 }

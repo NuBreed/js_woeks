@@ -13,6 +13,16 @@ if (document.path === 'insights.html') {
   }, 40)
 }
 
+const arty = document.querySelectorAll('.news-card')
+arty.forEach((art) => {
+  art.addEventListener('click', function () {
+    console.log(art.getElementsByClassName('news-card-img'))
+
+    art.nextElementSibling.classList.toggle('showing')
+    console.log(art.nextElementSibling)
+  })
+})
+
 let articles = newsArray.map(function (article) {
   return `
   
