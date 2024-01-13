@@ -13,19 +13,9 @@ if (document.path === 'insights.html') {
   }, 40)
 }
 
-const arty = document.querySelectorAll('.news-card')
-arty.forEach((art) => {
-  art.addEventListener('click', function () {
-    console.log(art.getElementsByClassName('news-card-img'))
-
-    art.nextElementSibling.classList.toggle('showing')
-    console.log(art.nextElementSibling)
-  })
-})
-
 let articles = newsArray.map(function (article) {
   return `
-  
+    <div class="card-wrapper">
               <article class="news-card" data-id=${article.id} >
                 <div class="news-card-header">
                   <img
@@ -49,38 +39,41 @@ let articles = newsArray.map(function (article) {
                   <h5 class="news-card-published">${article.date_published}</h5>
                 </div>
               </article>
-            
-          
-       
-`
-})
-
-let articleDetails = newsArray.map(function (article) {
-  return `<div data-details=${article.id} class="card-details">
+              <div data-details=${article.id} class="card-details">
               <img
                 src=${article.details.details_image}
                 alt=""
                 class="card-details-img"
               />
               <h2 class="card-details-title">${article.details.details_title}</h2>
-              <p>
+              <p class="card-details-body">
                ${article.details.details_text}
               </p>
-              <p>
-             ${article.details.details_text}
-              </p>
+           
             </div>
-            `
+              </div>
+          
+       
+`
 })
-const wrapper = document.querySelector('.card-wrapper')
-// wrapper.innerHTML = articles
-// details
-const detailsWrapper = document.querySelector('.main-content-body-right')
-// detailsWrapper.innerHTML = articleDetails
 
-const wrapperCard = document.querySelectorAll('[data-id]')
-
-const displayDetails = document.querySelectorAll('.card-details')
+const wrapper = document.querySelector('.main-content-body')
+wrapper.innerHTML = articles
+const arty = document.querySelectorAll('.news-card')
+arty.forEach((art) => {
+  console.log(art)
+  art.addEventListener('click', function () {
+    if (art.classList.contains('showing')) {
+      art.classList.remove('showing')
+    } else {
+      const show = document.querySelectorAll('.showing')
+      show.forEach((details) => {
+        details.classList.remove('showing')
+      })
+      art.classList.add('showing')
+    }
+  })
+})
 
 // weather
 
