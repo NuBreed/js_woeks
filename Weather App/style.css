@@ -255,7 +255,6 @@ span {
 }
 .wp-header-wrapper {
   padding: 12px;
-  width: 100%;
 }
 .wp-header {
   display: flex;
@@ -265,23 +264,35 @@ span {
 }
 .wp-header-icon {
   color: #ffffff;
-  font-size: 32px;
+  font-size: 24px;
 }
-.wp-header-date {
-  margin-right: -200px;
+
+.wp-header-city {
+  text-transform: capitalize;
+}
+.wp-right {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 12px;
 }
 .wp-card-main {
-  width: 250px;
-
   padding: 12px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 12px 2px rgb(235, 235, 235);
   margin: 24px auto;
   color: black;
+  cursor: pointer;
+}
+.wp-card-main:hover {
+  background-color: #c0d6f6;
 }
 .wp-card-data {
   padding: 12px;
   display: flex;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: capitalize;
   justify-content: space-around;
 }
 .wp-details ul li {
@@ -315,10 +326,9 @@ span {
 @media (min-width: 768px) {
   .wp-wrapper {
     width: 80vw;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     flex-direction: row-reverse;
   }
@@ -326,6 +336,12 @@ span {
     width: 250px;
     height: 250px;
     object-fit: cover;
+  }
+  .wp-left {
+    flex-basis: 50%;
+  }
+  .wp-right {
+    flex-basis: 50%;
   }
   .wp-header-wrapper {
     margin-bottom: 24px;
