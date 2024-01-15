@@ -479,13 +479,14 @@ svg {
 }
 .metrics-navs {
   width: 10%;
+  height: 500px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
   padding: 4px;
-  height: 100vh;
 }
 .metrics-links {
   color: #000000;
@@ -502,8 +503,8 @@ svg {
 }
 .metrics-links .fa-solid {
   color: grey;
-  font-size: 24px;
-  padding: 8px;
+  font-size: 20px;
+  padding: 4px;
 }
 .chart-img {
   padding: 12px;
