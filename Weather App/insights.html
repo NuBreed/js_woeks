@@ -19,43 +19,17 @@
   </head>
   <body>
     <main class="container">
-      <aside class="sidebar">
-        <header class="sidebar-header">
-          <img src="./assets/farmer.png" alt="sidebar-image" />
-        </header>
-        <div class="sidebar-navigation">
-          <!-- <ul class="nav-links">
-            <li>
-              <span>
-                <i class="fa-solid fa-cloud"></i>
-              </span>
-              <a href="./weather.html">Weather</a>
-            </li>
-            <li>
-              <span> <i class="fa-solid fa-chart-line"></i> </span>
-              <a href="">Insight</a>
-            </li>
-            <li>
-              <span>
-                <i class="fa-solid fa-newspaper"></i>
-              </span>
-              <a href="">News</a>
-            </li>
-            <li>
-              <span><i class="fa-solid fa-location-dot"></i></span>
-              <a href="">Maps</a>
-            </li>
-          </ul> -->
-        </div>
+      <aside class="metrics-sidebar">
+        <img src="./assets/farmer.png" alt="metrics-image" />
       </aside>
 
       <div>
-        <div>
+        <div class="svg-wrapper">
           <div class="svg">
             <div class="outer">
               <div class="inner">
                 <span>Active users</span>
-                <span class="is-number"></span>
+                <span class="is-number" data-svg="40"></span>
               </div>
             </div>
             <svg
@@ -73,42 +47,86 @@
               <circle cx="80" cy="80" r="70" stroke-linecap="round" />
             </svg>
           </div>
+
+          <div>
+            <div class="svg">
+              <div class="outer">
+                <div class="inner">
+                  <span>Active users</span>
+                  <span class="is-number" data-svg="80"></span>
+                </div>
+              </div>
+              <svg
+                xmls="http://www.w3.org/2000/svg"
+                version="1.1"
+                height="160px"
+                width="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#7F56D9" />
+                    <stop offset="100%" stop-color="#9a7ed9" />
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+          <div>
+            <div class="svg">
+              <div class="outer">
+                <div class="inner">
+                  <span>Active users</span>
+                  <span class="is-number" data-svg="60"></span>
+                </div>
+              </div>
+              <svg
+                xmls="http://www.w3.org/2000/svg"
+                version="1.1"
+                height="160px"
+                width="160px"
+              >
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#7F56D9" />
+                    <stop offset="100%" stop-color="#9a7ed9" />
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
         </div>
         <div>
-          <img src="./assets/Chart.png" alt="" />
+          <img src="./assets/Chart.png" alt="" class="chart-img" />
         </div>
       </div>
-      <div class="is-navigation">
-        <aside class="sidebar">
-          <header class="sidebar-header">
-            <img src="./assets/farmer.png" alt="sidebar-image" />
-          </header>
-          <div class="sidebar-navigation">
-            <ul class="nav-links">
-              <li>
-                <span>
-                  <i class="fa-solid fa-cloud"></i>
-                </span>
-                <a href="./weather.html">Weather</a>
-              </li>
-              <li>
-                <span> <i class="fa-solid fa-chart-line"></i> </span>
-                <a href="">Insight</a>
-              </li>
-              <li>
-                <span>
-                  <i class="fa-solid fa-newspaper"></i>
-                </span>
-                <a href="">News</a>
-              </li>
-              <li>
-                <span><i class="fa-solid fa-location-dot"></i></span>
-                <a href="">Maps</a>
-              </li>
-            </ul>
-          </div>
-        </aside>
-      </div>
+
+      <aside class="metrics-navs">
+        <li class="metrics-links">
+          <a href="./weather.html">
+            <i class="fa-solid fa-cloud"> </i>
+          </a>
+        </li>
+        <li class="metrics-links">
+          <a href="#"> <i class="fa-solid fa-chart-line"> </i> </a>
+        </li>
+        <li class="metrics-links">
+          <a href="./index.html">
+            <i class="fa-solid fa-newspaper"></i>
+          </a>
+        </li>
+        <li class="metrics-links">
+          <a href="">
+            <i class="fa-solid fa-location-dot"></i>
+          </a>
+        </li>
+        <li class="metrics-links">
+          <a href="">
+            <i class="fa-solid fa-xmark"></i>
+          </a>
+        </li>
+      </aside>
     </main>
     <script src="app.js" type="module"></script>
   </body>

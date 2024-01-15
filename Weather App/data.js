@@ -19,7 +19,7 @@ export const newsArray = [
     id: 2,
     image:
       'https://images.pexels.com/photos/70746/strawberries-red-fruit-royalty-free-70746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    title: 'Hay When You Need It',
+    title: 'Veggies',
     author: 'George Washington',
     date_published: 'Thursday 09 2022',
     details: {

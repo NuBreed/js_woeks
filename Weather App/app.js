@@ -1,17 +1,20 @@
 // insight page js
 import { newsArray } from './data.js'
-const userNumber = document.querySelector('.is-number')
-if (document.path === 'insights.html') {
-  let counter = 0
+const userNumber = document.querySelectorAll('.is-number')
+
+let counter = 0
+userNumber.forEach((userNum) => {
+  const svgTarget = userNum.getAttribute('data-svg')
   setInterval(() => {
-    if (counter >= 40) {
+    if (counter >= svgTarget) {
       clearInterval
     } else {
       counter++
-      userNumber.textContent = `${counter}%`
+
+      userNum.textContent = `${counter}%`
     }
-  }, 40)
-}
+  })
+})
 
 let articles = newsArray.map(function (article) {
   return `

@@ -16,6 +16,7 @@ li {
   display: flex;
 }
 /*  sidebar */
+
 .sidebar {
   background-color: #007155;
   min-height: 100vh;
@@ -387,6 +388,27 @@ span {
 }
 
 /* insights */
+.metrics-sidebar {
+  background-color: #007155;
+  min-height: 100vh;
+  flex-basis: 20%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: grid;
+}
+
+.metrics-image {
+  height: 200px;
+  width: 200px;
+}
+.svg-wrapper {
+  padding: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 14px;
+}
 .svg {
   height: 160px;
   width: 160px;
@@ -396,7 +418,7 @@ span {
 .outer {
   height: 160px;
   width: 160px;
-  /* border: 10px solid #7f56d9; */
+
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
     -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
   border-radius: 50%;
@@ -438,4 +460,37 @@ svg {
   position: absolute;
   top: 0;
   left: 0;
+}
+.metrics-navs {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 4px;
+  height: 100vh;
+}
+.metrics-links {
+  color: #000000;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 2px 2px 12px 2px rgb(197, 196, 196);
+  transition: background-color 15ms linear;
+}
+.metrics-links:hover {
+  background-color: #c0d6f6;
+}
+.metrics-links a {
+  margin: 0 auto;
+}
+.metrics-links .fa-solid {
+  color: grey;
+  font-size: 24px;
+  padding: 8px;
+}
+.chart-img {
+  padding: 12px;
+  width: 100%;
+  height: 100%;
 }
