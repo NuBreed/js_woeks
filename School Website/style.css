@@ -9,8 +9,18 @@
 button {
   padding: 4px;
   border: none;
-  background: none;
   outline: none;
+  cursor: pointer;
+  padding: 12px;
+  background: #149bfc;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 32px;
+  box-shadow: 2px 2px 8px rgb(188, 187, 187);
+  transition: box-shadow 120ms linear;
+}
+button:hover {
+  box-shadow: 4px 4px 12px rgb(188, 187, 187);
 }
 .section-wrapper {
   width: 90vw;
@@ -19,7 +29,7 @@ button {
 @media (min-width: 768px) {
   .section-wrapper {
     width: 80vw;
-    margin: 0 auto 24px;
+    margin: 0 auto;
   }
 }
 /* #navbar */
@@ -97,20 +107,127 @@ button {
     display: block;
     position: relative;
   }
-  .tab-hide div {
+  .tab-hide .more-info {
     display: none;
-    height: 400px;
-    width: 500px;
-    background: red;
     position: absolute;
+    padding: 12px;
   }
-  .tab-hide:hover div {
+
+  .tab-hide .more-info::before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #66acde;
+    display: inline-block;
+    vertical-align: super;
+    margin-right: 5px;
+    transform: rotateX(180);
+    position: absolute;
+    top: -10px;
+    left: 40%;
+  }
+  .tab-hide:hover .more-info {
     display: block;
-    height: 400px;
-    width: 500px;
-    background: red;
+    border-radius: 10px;
+    background: #149bfc52;
     position: absolute;
     right: -50%;
     top: 32px;
   }
+  .more-info span {
+    display: block;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+/* hero */
+
+.hero-section {
+  height: 65vh;
+  max-width: 100vw;
+  background: url('./assets/Rectangle3.png');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  padding: 24px 0;
+}
+.hero-center {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.hero-col-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  color: #149bfc;
+}
+.hero-col-2 {
+  display: none;
+}
+.hero-h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+.hero-h2 {
+  font-size: 32px;
+}
+.hero-btn {
+  width: 40%;
+}
+@media (min-width: 1100px) {
+  .hero-section {
+    background-repeat: repeat;
+    height: 80vh;
+  }
+  .hero-center {
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-col-2 {
+    display: block;
+  }
+  .hero-h1 {
+    font-size: 64px;
+  }
+  .hero-h2 {
+    font-size: 48px;
+  }
+}
+
+/* about us */
+.about-section {
+  background-image: url('./assets/Rectangle\ 4.png');
+}
+.about-center {
+  padding: 24px;
+}
+.about-header {
+  text-transform: uppercase;
+  width: max-content;
+  color: #149bfc;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 24px;
+  position: relative;
+}
+.about-header:after {
+  content: url('./assets/Vector.png');
+  position: absolute;
+  top: 12px;
+  left: 0;
+}
+.about-details {
+  line-height: 24px;
+  text-indent: 50px;
+  font-size: 16px;
+  padding: 12px 0;
+}
+
+.about-col-2 {
+  display: none;
 }
