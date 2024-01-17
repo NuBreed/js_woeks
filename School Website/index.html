@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>St, Marys Convent School</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-header"></div>
+      <section class="navbody">
+        <div class="section-wrapper nav-center">
+          <div class="nav-left">
+            <span>logo</span>
+          </div>
+          <div class="nav-mobile">
+            <button class="toggle-btn">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark hide"></i>
+            </button>
+            <aside class="aside hide">
+              <menu class="menu section-wrapper">
+                <li>Home</li>
+                <li>About</li>
+                <li>Academics</li>
+                <li>Facilities</li>
+                <li>School Updates</li>
+                <li>CBSE</li>
+                <li>Gallery</li>
+                <li>contact</li>
+              </menu>
+            </aside>
+          </div>
+          <div class="nav-right">
+            <li>Home</li>
+            <li>About</li>
+            <li class="tab-hide">
+              Academics
+              <i class="fa-solid fa-angle-down"></i>
+            </li>
+            <li class="tab-hide">
+              Facilities
+              <i class="fa-solid fa-angle-down"></i>
+            </li>
+            <li class="tab-hide">School Updates</li>
+            <li class="tab-hide">
+              CBSE
+              <i class="fa-solid fa-angle-down"></i>
+              <div class="more-info expand">gfsdfg</div>
+            </li>
+            <li>Gallery</li>
+            <li>contact</li>
+          </div>
+        </div>
+      </section>
+    </nav>
+    <script>
+      const toggleBtn = document.querySelector('.toggle-btn')
+      toggleBtn.addEventListener('click', function () {
+        const openMenu = document.querySelector('.fa-bars')
+        const closeMenu = document.querySelector('.fa-xmark')
+        const aside = document.querySelector('.aside')
+        openMenu.classList.toggle('hide')
+        closeMenu.classList.toggle('hide')
+        aside.classList.toggle('hide')
+      })
+    </script>
+  </body>
+</html>

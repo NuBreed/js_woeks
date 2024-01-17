@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+button {
+  padding: 4px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.section-wrapper {
+  width: 90vw;
+  margin: 0 auto 24px;
+}
+@media (min-width: 768px) {
+  .section-wrapper {
+    width: 80vw;
+    margin: 0 auto 24px;
+  }
+}
+/* #navbar */
+.navbody {
+  background-color: #149bfc;
+  position: relative;
+}
+.nav-center {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  color: #fff;
+  font-size: 32px;
+}
+.nav-right {
+  display: none;
+}
+.toggle-btn {
+  color: #fff;
+  font-size: 32px;
+}
+.hide {
+  display: none;
+}
+.aside {
+  background-color: #149bfc;
+  height: fit-content;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 64px;
+
+  width: 50%;
+  transition: all 13ms ease-in;
+  z-index: 2;
+}
+.menu li {
+  list-style: none;
+  font-size: 20px;
+  margin-bottom: 12px;
+  padding: 12px 8px;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 12px;
+}
+.menu li:hover {
+  background-color: #9fd2f6ac;
+  box-shadow: 2px 2px 120px 10px #fff;
+}
+@media (min-width: 768px) {
+  .nav-mobile {
+    display: none;
+  }
+  .nav-right {
+    display: flex;
+    gap: 22px;
+  }
+  .nav-right li {
+    list-style: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tab-hide {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .tab-hide {
+    display: block;
+    position: relative;
+  }
+  .tab-hide div {
+    display: none;
+    height: 400px;
+    width: 500px;
+    background: red;
+    position: absolute;
+  }
+  .tab-hide:hover div {
+    display: block;
+    height: 400px;
+    width: 500px;
+    background: red;
+    position: absolute;
+    right: -50%;
+    top: 32px;
+  }
+}
