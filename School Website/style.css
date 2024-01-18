@@ -29,6 +29,7 @@ button:hover {
 @media (min-width: 768px) {
   .section-wrapper {
     width: 80vw;
+    height: 90vh;
     margin: 0 auto;
   }
 }
