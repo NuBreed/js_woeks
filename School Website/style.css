@@ -421,10 +421,9 @@ button:hover {
   border: 12px solid #b1d9f3;
   border-radius: 40px 0 40px 0;
   margin-bottom: 24px;
-  box-shadow: <a#149bfc;
+  box-shadow: 0px 4px 4px 0px #149bfc27;
 }
-.rule:hover {
-}
+
 .rule-icon {
   font-size: 90px;
   font-weight: 900;
@@ -439,6 +438,7 @@ button:hover {
   text-align: start;
   text-wrap: wrap;
   width: 200px;
+  text-shadow: 1px 2px 14px #80bcce;
 }
 
 @media (min-width: 768px) {
@@ -447,4 +447,78 @@ button:hover {
     justify-content: space-evenly;
     align-items: center;
   }
+}
+/* new */
+.news-section {
+  background: url('./assets/section-bg.png');
+  background-position: center;
+  background-size: cover;
+}
+.news-column-2 {
+  padding: 12px;
+}
+.new-heading {
+  font-size: 24px;
+  color: #2976df;
+  text-align: center;
+}
+.new-details {
+  font-size: 20px;
+  line-height: 30px;
+}
+@media (min-width: 768px) {
+  .news-center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  .new-heading {
+    font-size: 24px;
+    color: #2976df;
+    text-align: start;
+    margin-bottom: 12px;
+  }
+}
+/* contact */
+.contact-center {
+  margin: 0 auto;
+}
+fieldset {
+  border: none;
+  outline: none;
+  padding: 12px;
+}
+fieldset input,
+fieldset textarea {
+  padding: 12px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid #2976df;
+  width: 100%;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.contact-btn {
+  width: 100%;
+}
+.contact-box {
+  margin: 0 auto;
+  color: #76bef2;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.contact-box span {
+  flex-basis: 20%;
+}
+.contact-box small {
+  flex-basis: 80%;
+}
+.contact-box .contact-icon {
+  font-size: 30px;
 }
