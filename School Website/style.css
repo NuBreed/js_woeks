@@ -506,12 +506,12 @@ textarea::placeholder {
 }
 .contact-box {
   margin: 0 auto;
-  color: #76bef2;
+  color: #38acff;
   width: 80%;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+
+  margin-bottom: 8px;
 }
 .contact-box span {
   flex-basis: 20%;
@@ -519,6 +519,13 @@ textarea::placeholder {
 .contact-box small {
   flex-basis: 80%;
 }
-.contact-box .contact-icon {
+.contact-icon {
   font-size: 30px;
+}
+.icon-footer {
+  color: #38acff;
+  padding: 4px;
+
+  display: flex;
+  justify-content: space-evenly;
 }
