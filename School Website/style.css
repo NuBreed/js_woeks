@@ -29,7 +29,7 @@ button:hover {
 @media (min-width: 768px) {
   .section-wrapper {
     width: 80vw;
-    height: 90vh;
+    height: max-content;
     margin: 0 auto;
   }
 }
@@ -304,10 +304,13 @@ button:hover {
 
 /* facilities */
 .fac-center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.fac-card {
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
 }
 .fac {
   width: 146px;
@@ -326,15 +329,33 @@ button:hover {
   padding: 14px;
   font-size: 24px;
   font-weight: light;
+  text-align: center;
+  text-wrap: wrap;
 }
-
+@media (min-width: 768px) {
+  .fac-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+}
 /* staff */
+
+.staff-section {
+  height: max-content;
+}
 .staff-wrapper {
-  max-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  place-items: center;
+}
+.staff_card {
+  background: #99d1f9 linear-gradient(235deg, #99d1f9, #fff, #99d1f9);
+  padding: 12px;
+  border-radius: 20% 10% 20% 0;
+  text-align: center;
+  width: max-content;
+  margin-bottom: 12px;
 }
 
 .staff-card header {
@@ -346,78 +367,84 @@ button:hover {
 }
 .staff-icon {
   display: block;
-  font-size: 24px;
+  font-size: 32px;
   color: #149bfc;
+  padding: 12px 0;
 }
 .staff-img {
-  height: 76px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   object-fit: cover;
   padding: 12px;
+  transition: all 120ms linear;
+  cursor: pointer;
+}
+.staff-img:hover {
+  border: 12px solid #fff;
+  outline-offset: none;
 }
 .staff-body {
   width: 200px;
   font-size: 12px;
   margin: 0 auto;
 }
-.staff_card_1 {
-  position: relative;
-  flex-basis: 30%;
-  /* margin: 0 0 400px 0; */
-}
-.svg_main_1 {
-  position: absolute;
-  z-index: -1;
-}
-.svg_sub_1 {
-  position: absolute;
-  left: 0;
-  z-index: -2;
-}
-.staff-card-details_1 {
-  position: absolute;
-  width: 100px;
-  z-index: 10px;
-  left: 55px;
-}
-.staff_card_2 {
-  position: relative;
-  flex-basis: 40%;
-}
-.svg_main_2 {
-  position: absolute;
-}
-.svg_sub_2 {
-  position: absolute;
-  left: 0;
-  z-index: -2;
-}
-.staff-card-details_2 {
-  position: absolute;
-  top: 0;
-  z-index: 10px;
-  left: 100px;
-}
-.staff-card_3 {
-  position: relative;
-  flex-basis: 30%;
-}
-.svg-main_3 {
-  position: absolute;
-}
-.staff-card-details_3 {
-  position: absolute;
-  top: 0;
-  position: absolute;
-  z-index: 10px;
-  /* left: 65px; */
-}
-@media (min-width: 1200px) {
+
+@media (min-width: 768px) {
   .staff-wrapper {
-    margin: 0 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    height: max-content;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* rules */
+.rules-center {
+  display: grid;
+  place-items: center;
+}
+.rules-card {
+  margin-bottom: 24px;
+}
+.rule {
+  height: 165px;
+  aspect-ratio: 1;
+  background-color: #def1fe;
+  display: grid;
+  place-items: center;
+  border: 12px solid #b1d9f3;
+  border-radius: 40px 0 40px 0;
+  margin-bottom: 24px;
+  box-shadow: <a#149bfc;
+}
+.rule:hover {
+}
+.rule-icon {
+  font-size: 90px;
+  font-weight: 900;
+  color: #38acff;
+}
+
+.rules-card h5 {
+  color: #2976df;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: start;
+  text-wrap: wrap;
+  width: 200px;
+}
+
+@media (min-width: 768px) {
+  .rules-center {
     display: flex;
     justify-content: space-evenly;
-    gap: 20px;
+    align-items: center;
   }
 }
