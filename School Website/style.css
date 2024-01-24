@@ -533,9 +533,7 @@ textarea::placeholder {
   .contact-center {
     display: flex;
     justify-content: space-evenly;
-
     height: 450px;
-    border: 2px solid red;
     padding: 12px;
   }
   .contact-box,
@@ -548,6 +546,9 @@ textarea::placeholder {
   }
   .contact-column-left {
     flex-basis: 50%;
+  }
+  .contact-column-left form {
+    width: 400px;
   }
   .contact-column-rigth {
     flex-basis: 50%;
