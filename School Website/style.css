@@ -529,3 +529,27 @@ textarea::placeholder {
   display: flex;
   justify-content: space-evenly;
 }
+@media (min-width: 786px) {
+  .contact-center {
+    display: flex;
+    justify-content: space-evenly;
+
+    height: 450px;
+    border: 2px solid red;
+    padding: 12px;
+  }
+  .contact-box,
+  .icon-footer {
+    width: 400px;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+  .contact-column-left {
+    flex-basis: 50%;
+  }
+  .contact-column-rigth {
+    flex-basis: 50%;
+  }
+}
