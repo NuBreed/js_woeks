@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
       <div class="cart"></div>
     </header>
-    <main>
+    <main class="product-container">
       <div class="product-card">
         <img
           src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -20,14 +21,5 @@
       </div>
     </main>
   </body>
-  <script>
-    const cart = document.querySelector('.cart')
-    const add_to_cart = document.querySelector('.add_to_cart')
-    add_to_cart.addEventListener('click', function () {
-      let count = 0
-      const parent_Element = add_to_cart.parentElement
-      console.log(parent_Element, (cart.textContent = count += 1))
-      cart.textContent = count += 1
-    })
-  </script>
+  <script src="app.js" type="module"></script>
 </html>
