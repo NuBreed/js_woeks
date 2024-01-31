@@ -7,6 +7,7 @@ const selectedProduct = products.find((product) => {
 })
 console.log(selectedProduct)
 const cart = document.querySelector('.cart')
+const sidebar = document.querySelector('.sidebar')
 const productContainer = document.querySelector('.product-container')
 
 const productList = products.map((product) => {
@@ -38,6 +39,10 @@ add_to_carts.forEach((add_to_cart) =>
     })
     productsToCart.push(selectedProduct)
     cart.textContent = productsToCart.length
+    sidebar.innerHTML = `
+     <img src="${selectedProduct.image}" alt="" class="cart-img">
+      <span>${selectedProduct.price}</span>
+    `
     console.log(productsToCart)
     console.log(selectedProduct, data_id)
   })
