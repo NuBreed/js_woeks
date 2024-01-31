@@ -16,7 +16,7 @@ export const products = [
     id: 3,
     name: 'jksafbjsdf',
     image:
-      'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/1248583/pexels-photo-1248583.jpeg?auto=compress&cs=tinysrgb&w=600',
     price: 200,
   },
 ]

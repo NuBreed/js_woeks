@@ -1,13 +1,6 @@
 import { products } from './products.js'
 
-let productsToCart = []
-const selectedProduct = products.find((product) => {
-  console.log(product.name)
-  return product.id === 2
-})
-console.log(selectedProduct)
 const cart = document.querySelector('.cart')
-const sidebar = document.querySelector('.sidebar')
 const productContainer = document.querySelector('.product-container')
 
 const productList = products.map((product) => {
@@ -31,19 +24,28 @@ productContainer.innerHTML = productList
 // }
 const add_to_carts = document.querySelectorAll('.add_to_cart')
 
+const productsToCart = []
+let selectedProduct
+
 add_to_carts.forEach((add_to_cart) =>
   add_to_cart.addEventListener('click', function () {
     const data_id = add_to_cart.parentElement.dataset.id
-    const selectedProduct = products.find((product) => {
+    selectedProduct = products.find((product) => {
       return product.id === Number(data_id)
     })
     productsToCart.push(selectedProduct)
+
     cart.textContent = productsToCart.length
-    sidebar.innerHTML = `
-     <img src="${selectedProduct.image}" alt="" class="cart-img">
-      <span>${selectedProduct.price}</span>
-    `
-    console.log(productsToCart)
-    console.log(selectedProduct, data_id)
+    const cartProducts = productsToCart
+      .map((SP) => {
+        return `
+    <img src="${SP.image}" alt="" class="cart-img">
+    <span>${SP.price}</span>`
+      })
+      .join(' ')
+    const sidebar = document.querySelector('.sidebar')
+    console.log(sidebar, cartProducts)
+
+    sidebar.innerHTML = cartProducts
   })
 )
