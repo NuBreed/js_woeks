@@ -8,8 +8,9 @@ export const products = [
   },
   {
     id: 2,
-    name: 'jksafbjsdf',
-    image: 'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg',
+    name: 'sofa_2',
+    image:
+      'https://images.pexels.com/photos/1067556/pexels-photo-1067556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: 200,
   },
   {

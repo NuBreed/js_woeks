@@ -3,22 +3,27 @@ import { products } from './products.js'
 const cart = document.querySelector('.cart')
 const productContainer = document.querySelector('.product-container')
 
-const productList = products.map((product) => {
-  return `
-<div class="product-card" data-id="${product.id}">
-        <img
-          src=${product.image}
-          alt=""
-          class="product-img"
-        />
-        <div class="price">$${product.price}</div>
-        <button class="add_to_cart" >add to carteee</button>
-      </div>
+let productList
+if (!products) {
+  productContainer.textContent = 'loading'
+} else {
+  const productList = products.map((product) => {
+    return `
+    <div class="product-card" data-id="${product.id}">
+    <img
+    src=${product.image}
+    alt=""
+    class="product-img"
+    />
+    <div class="price">$${product.price}</div>
+    <button class="add_to_cart" >add to carteee</button>
+    </div>
+    
+    `
+  })
 
-`
-})
-
-productContainer.innerHTML = productList
+  productContainer.innerHTML = productList
+}
 // function addToCart(id) {
 //   console.log(id + 9)
 // }
