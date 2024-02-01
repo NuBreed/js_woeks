@@ -44,13 +44,24 @@ add_to_carts.forEach((add_to_cart) =>
     const cartProducts = productsToCart
       .map((SP) => {
         return `
+        <div>
     <img src="${SP.image}" alt="" class="cart-img">
-    <span>${SP.price}</span>`
+    <span class="increase" >+</span>
+    <span class="quantity">${SP.quantity}</span>
+    <span>-</span>
+    <span>${SP.price}</span>
+        </div>
+    
+    `
       })
       .join(' ')
     const sidebar = document.querySelector('.sidebar')
-    console.log(sidebar, cartProducts)
 
     sidebar.innerHTML = cartProducts
+    const increaseQuantity = document.querySelector('.increase')
+    increaseQuantity.addEventListener('click', function () {
+      const quantity = document.querySelector('quantity')
+      quantity.textContent += 1
+    })
   })
 )
