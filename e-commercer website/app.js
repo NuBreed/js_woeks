@@ -60,8 +60,8 @@ add_to_carts.forEach((add_to_cart) =>
     sidebar.innerHTML = cartProducts
     const increaseQuantity = document.querySelector('.increase')
     increaseQuantity.addEventListener('click', function () {
-      const quantity = document.querySelector('quantity')
-      quantity.textContent += 1
+      const quantityWrapper = document.querySelector('.quantity')
+      let quantity = Number(quantityWrapper.textContent)
     })
   })
 )
