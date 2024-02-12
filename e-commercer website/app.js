@@ -28,6 +28,7 @@ if (!products) {
 //   console.log(id + 9)
 // }
 const add_to_carts = document.querySelectorAll('.add_to_cart')
+const sidebar = document.querySelector('.sidebar')
 
 const productsToCart = []
 let selectedProduct
@@ -44,29 +45,36 @@ add_to_carts.forEach((add_to_cart) =>
     const cartProducts = productsToCart
       .map((SP) => {
         return `
-        <div>
+        <div class='cart-item' data-cart=${SP.id}>
     <img src="${SP.image}" alt="" class="cart-img">
     <span class="increase" >+</span>
-    <span class="quantity">0</span>
+    <span class="quantity">${SP.quantity}</span>
     <span>-</span>
     <span>${SP.price}</span>
-        </div>
-    
-    `
+        </div>`
       })
       .join(' ')
-    const sidebar = document.querySelector('.sidebar')
-
     sidebar.innerHTML = cartProducts
-    const increaseQuantities = document.querySelectorAll('.increase')
-    increaseQuantities.forEach((increaseQuantity) =>
-      increaseQuantity.addEventListener('click', function () {
-        const quantityWrapper = document.querySelector('.quantity')
-        console.log(quantityWrapper.textContent)
-        let changedtoNumber = Number(quantityWrapper.textContent)
-
-        quantityWrapper.textContent = changedtoNumber += 1
-      })
-    )
   })
 )
+
+if (productsToCart.length != 0) {
+  console.log(sidebar)
+  console.log('hhhf')
+  const cartItems = document.querySelectorAll('.cart-item')
+  console.log(cartItems)
+  cartItems.forEach(
+    (cartItem) => {
+      cartItem.addEventListener('click'),
+        function () {
+          console.log(cartItem)
+        }
+    }
+    // increaseQuantity.addEventListener('click', function () {
+    //   const quantityWrapper = document.querySelector('.quantity')
+    //   console.log(quantityWrapper.textContent)
+    //   let changedtoNumber = Number(quantityWrapper.textContent)
+
+    // quantityWrapper.textContent = changedtoNumber += 1
+  )
+}
