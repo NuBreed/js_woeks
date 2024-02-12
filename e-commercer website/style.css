@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .product-card {
   height: 600px;
   width: 500px;
@@ -17,4 +21,12 @@
 .cart-img {
   width: 20px;
   height: 20px;
+}
+
+.sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  background-color: chocolate;
 }

@@ -47,7 +47,7 @@ add_to_carts.forEach((add_to_cart) =>
         <div>
     <img src="${SP.image}" alt="" class="cart-img">
     <span class="increase" >+</span>
-    <span class="quantity">${SP.quantity}</span>
+    <span class="quantity">0</span>
     <span>-</span>
     <span>${SP.price}</span>
         </div>
@@ -58,10 +58,15 @@ add_to_carts.forEach((add_to_cart) =>
     const sidebar = document.querySelector('.sidebar')
 
     sidebar.innerHTML = cartProducts
-    const increaseQuantity = document.querySelector('.increase')
-    increaseQuantity.addEventListener('click', function () {
-      const quantityWrapper = document.querySelector('.quantity')
-      let quantity = Number(quantityWrapper.textContent)
-    })
+    const increaseQuantities = document.querySelectorAll('.increase')
+    increaseQuantities.forEach((increaseQuantity) =>
+      increaseQuantity.addEventListener('click', function () {
+        const quantityWrapper = document.querySelector('.quantity')
+        console.log(quantityWrapper.textContent)
+        let changedtoNumber = Number(quantityWrapper.textContent)
+
+        quantityWrapper.textContent = changedtoNumber += 1
+      })
+    )
   })
 )
